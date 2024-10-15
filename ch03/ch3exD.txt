@@ -1,0 +1,1 @@
+floor (-1.5) shall be (-2.0). But the function returns (-1.0)
