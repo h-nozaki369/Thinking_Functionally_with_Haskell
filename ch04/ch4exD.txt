@@ -1,0 +1,3 @@
+Both results are same only when ys is finite.
+Former one has less computation cost because it chooses x from xs only p x holds, then chooses y from ys.
+On the other hand, later one chooses all possible x from xs and chooses y from ys, then p x is checked.

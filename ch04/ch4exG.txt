@@ -1,0 +1,1 @@
+It is same when lazy evaluation is used. It can be reduced when eager evaluation is used.

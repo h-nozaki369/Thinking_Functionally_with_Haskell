@@ -1,0 +1,6 @@
+Only followings are True, and others are False.
+xs : [] = [xs]
+[[]] ++ [xs] = [[], xs]
+[xs] ++ [] = [xs]
+
+The function "null" is not defined as (== []) because it requires the element is the instance of the type class "Eq".

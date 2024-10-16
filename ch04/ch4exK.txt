@@ -1,0 +1,24 @@
+unzip :: [(a, b)] -> ([a], [b])
+
+cross :: (a -> b, c -> d) -> (a, c) -> (b, d)
+
+  cross (map f, map g) . unzip
+=    { definition of unzip }
+  cross (map f, map g) . fork (map fst, map snd)
+=    { cross-fork raw }
+  fork (map f . map fst, map g . map snd)
+=    { functor raw }
+  fork (map (f . fst), map (g. snd))
+
+  unzip . map (cross (f, g))
+=    { definition of unzip }
+  fork (map fst, map snd) . map (cross (f, g))
+=    { fork raw }
+  fork (map fst . map (cross (f, g)), map snd . map (cross (f, g)))
+=    { functor raw }
+  fork (map (fst . cross (f, g)), map (snd . cross (f, g)))
+=    { fst-cross raw and snd-cross raw }
+  fork (map (f . fst), map (g . snd))
+
+Therefore
+  cross (map f, map g) . unzip = unzip . map (cross (f, g))
