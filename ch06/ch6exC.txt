@@ -1,0 +1,30 @@
+Case [x]
+  (head . map f) [x]
+=    { definition of . }
+  head (map f [x])
+=    { map.2 }
+  head [f x]
+=    { definition of head }
+  f x
+
+  (f . head) [x]
+=    { definition of . }
+  f (head [x])
+=    { definition of head }
+  f x
+
+Case (x:xs)
+  (head . map f) (x:xs)
+=    { definition of . }
+  head (map f (x:xs))
+=    { map.2 }
+  head (f x : map f xs)
+=    { definition of head }
+  f x
+
+  (f . head) (x:xs)
+=    { definition of . }
+  f (head (x:xs))
+=    { definition of head }
+  f x
+

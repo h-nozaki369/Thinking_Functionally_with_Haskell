@@ -1,0 +1,23 @@
+Case xs = []
+  reverse ([] ++ ys)
+=    { ++.1 }
+  reverse ys
+
+  reverse ys ++ reverse []
+=    { reverse.1 }
+  reverse ys ++ []
+=    { ++.1 }
+  reverse ys
+
+Case (x:xs)
+  reverse ((x:xs) ++ ys)
+=    { ++.2 }
+  reveerse (x : (xs ++ ys))
+=    { reverse.2 }
+  reverse (xs ++ ys) ++ [x]
+=    { assumption }
+  reverse ys ++ reverse xs ++ [x]
+
+  reverse ys ++ reverse (x:xs)
+=    { reverse.2 }
+  reverse ys ++ reverse xs ++ [x]

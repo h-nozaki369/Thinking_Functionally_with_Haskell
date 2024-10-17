@@ -1,0 +1,23 @@
+Case x = Zero
+  mult (0 + y) z
+=    { assumption }
+  mult y z
+
+  mult 0 y + mul y z
+=    { mult.1 }
+  0 + mul y z
+=    { assumption }
+  mul y z
+
+Case x = Succ x
+  mult (Succ x + y) z
+=    { add }
+  mult (Succ (x + y)) z
+=    { mult.2 }
+  mult (x + y) z + z
+
+  mult (Succ x) z + mult y z
+=    { mult.2 }
+  mult x z + z + mult y z
+=    { assumption }
+  mult (x + y ) z + z
