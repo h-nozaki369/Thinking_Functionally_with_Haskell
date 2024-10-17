@@ -1,9 +1,9 @@
   cross (f, g) . cross (h, k)
 =    { definition of cross }
   cross (f, g) . fork (h . fst, k . snd)
-=    { cross-fork raw }
+=    { cross-fork law }
   fork (f . (h . fst), g . (k . snd))
-=    { assosiative raw of . }
+=    { assosiative law of . }
   fork ((f . h) . fst, (g . k) . snd)
 =    { definition of cross }
   cross (f . h, g . k)

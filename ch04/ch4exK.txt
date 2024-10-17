@@ -5,19 +5,19 @@ cross :: (a -> b, c -> d) -> (a, c) -> (b, d)
   cross (map f, map g) . unzip
 =    { definition of unzip }
   cross (map f, map g) . fork (map fst, map snd)
-=    { cross-fork raw }
+=    { cross-fork law }
   fork (map f . map fst, map g . map snd)
-=    { functor raw }
+=    { functor law }
   fork (map (f . fst), map (g. snd))
 
   unzip . map (cross (f, g))
 =    { definition of unzip }
   fork (map fst, map snd) . map (cross (f, g))
-=    { fork raw }
+=    { fork law }
   fork (map fst . map (cross (f, g)), map snd . map (cross (f, g)))
-=    { functor raw }
+=    { functor law }
   fork (map (fst . cross (f, g)), map (snd . cross (f, g)))
-=    { fst-cross raw and snd-cross raw }
+=    { fst-cross law and snd-cross law }
   fork (map (f . fst), map (g . snd))
 
 Therefore
